@@ -1,0 +1,29 @@
+char inputByte;
+
+void setup() {
+ Serial.begin(9600);
+ pinMode(11,OUTPUT);
+
+
+}
+
+void loop() {
+while(Serial.available()>0){
+  inputByte= Serial.read();
+  Serial.println(inputByte);
+  if (inputByte=='a'){
+    analogWrite(11,0);
+    delay(5);}
+  else if (inputByte=='b'){
+    analogWrite(11,170);
+    delay(5);}
+  else if (inputByte=='c'){
+    analogWrite(11,200);
+    delay(5);}
+  else if (inputByte=='d'){
+    analogWrite(11,255);
+    delay(5);
+  
+  } 
+  }
+}
